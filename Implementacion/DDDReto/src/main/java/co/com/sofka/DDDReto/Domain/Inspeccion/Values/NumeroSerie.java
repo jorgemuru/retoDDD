@@ -1,4 +1,9 @@
 package co.com.sofka.DDDReto.Domain.Inspeccion.Values;
 
-public class NumeroSerie {
+import co.com.sofka.domain.generic.ValueObject;
+
+public class NumeroSerie  implements ValueObject<String> {
+    public String value(){
+        return null;
+    }
 }

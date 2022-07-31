@@ -1,4 +1,9 @@
 package co.com.sofka.DDDReto.Domain.Inspeccion.Values;
 
-public class Edad {
+import co.com.sofka.domain.generic.ValueObject;
+
+public class Edad  implements ValueObject<String> {
+    public String value(){
+        return null;
+    }
 }

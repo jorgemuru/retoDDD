@@ -1,4 +1,9 @@
 package co.com.sofka.DDDReto.Domain.Inspeccion.Values;
 
-public class Tipo {
+import co.com.sofka.domain.generic.ValueObject;
+
+public class Tipo  implements ValueObject<String> {
+    public String value(){
+        return null;
+    }
 }
