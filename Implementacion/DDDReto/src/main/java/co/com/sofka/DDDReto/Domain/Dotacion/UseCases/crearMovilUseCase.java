@@ -1,4 +1,4 @@
-package co.com.sofka.DDDReto.Business.UseCases;
+package co.com.sofka.DDDReto.Domain.Dotacion.UseCases;
 
 import co.com.sofka.DDDReto.Domain.Dotacion.Dotacion;
 import co.com.sofka.business.generic.UseCase;

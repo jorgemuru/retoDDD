@@ -4,6 +4,7 @@ import co.com.sofka.DDDReto.Domain.Inspeccion.Values.*;
 
 public class CrearPersona extends Command{
     private final Name name;
+    private final InspeccionId inspeccionId;
     private final NombrePersona nombrePersona;
     private final Edad edad;
     private final Nacionalidad nacionalidad;
@@ -11,8 +12,9 @@ public class CrearPersona extends Command{
     private final Documento documento;
     private final Rol rol;
 
-    public CrearPersona(Name name, NombrePersona nombrePersona, Edad edad, Nacionalidad nacionalidad,
+    public CrearPersona(InspeccionId inspeccionId, Name name, NombrePersona nombrePersona, Edad edad, Nacionalidad nacionalidad,
                         Domicilio domicilio, Documento documento, Rol rol) {
+        this.inspeccionId = inspeccionId;
         this.name = name;
         this.nombrePersona = nombrePersona;
         this.edad = edad;
@@ -20,6 +22,10 @@ public class CrearPersona extends Command{
         this.domicilio = domicilio;
         this.documento = documento;
         this.rol = rol;
+    }
+
+    public InspeccionId getInspeccionId() {
+        return inspeccionId;
     }
 
     public Name getName() {

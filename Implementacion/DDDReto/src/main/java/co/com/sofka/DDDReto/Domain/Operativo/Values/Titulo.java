@@ -1,4 +1,9 @@
 package co.com.sofka.DDDReto.Domain.Operativo.Values;
 
-public class Titulo {
+import co.com.sofka.domain.generic.ValueObject;
+
+public class Titulo  implements ValueObject<String> {
+    public String value(){
+        return null;
+    }
 }

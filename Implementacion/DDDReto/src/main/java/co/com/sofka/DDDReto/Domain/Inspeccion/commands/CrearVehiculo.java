@@ -5,6 +5,7 @@ import co.com.sofka.DDDReto.Domain.Inspeccion.Values.*;
 
 public class CrearVehiculo extends Command {
     private final Name name;
+    private final InspeccionId inspeccionId;
     private final Marca marca;
     private final Modelo modelo;
     private final Color color;
@@ -13,8 +14,9 @@ public class CrearVehiculo extends Command {
     private final Tipo tipo;
     private final Propietario propietario;
 
-    public CrearVehiculo(Name name, Marca marca, Modelo modelo, Color color,
+    public CrearVehiculo(InspeccionId inspeccionId, Name name, Marca marca, Modelo modelo, Color color,
                          Anio anio, Matricula matricula, Tipo tipo, Propietario propietario) {
+        this.inspeccionId = inspeccionId;
         this.name = name;
         this.marca = marca;
         this.modelo = modelo;
@@ -23,6 +25,10 @@ public class CrearVehiculo extends Command {
         this.matricula = matricula;
         this.tipo = tipo;
         this.propietario = propietario;
+    }
+
+    public InspeccionId getInspeccionId() {
+        return inspeccionId;
     }
 
     public Name getName() {

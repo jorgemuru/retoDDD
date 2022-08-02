@@ -1,5 +1,4 @@
 package co.com.sofka.DDDReto.Domain.Operativo.Values;
-import co.com.sofka.DDDReto.Domain.Inspeccion.Values.InspeccionId;
 import co.com.sofka.domain.generic.Identity;
 
 public class OperativoId extends Identity{

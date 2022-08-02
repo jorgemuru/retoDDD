@@ -1,6 +1,7 @@
 package co.com.sofka.DDDReto.Domain.Dotacion;
 import co.com.sofka.DDDReto.Domain.Dotacion.Events.dotacionCreada;
 import co.com.sofka.DDDReto.Domain.Dotacion.Events.movilCreado;
+import co.com.sofka.DDDReto.Domain.Dotacion.Events.policiaActualizado;
 import co.com.sofka.DDDReto.Domain.Dotacion.Events.policiaCreado;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.DDDReto.Domain.Dotacion.Values.*;
@@ -8,6 +9,7 @@ import co.com.sofka.DDDReto.Domain.Dotacion.Entities.*;
 import co.com.sofka.domain.generic.DomainEvent;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 public class Dotacion extends AggregateEvent<DotacionId>{
@@ -23,9 +25,9 @@ public class Dotacion extends AggregateEvent<DotacionId>{
         super(entityId);
         subscribe(new DotacionChange(this));
     }
-    public Dotacion(DotacionId entityId, Name name) {
+    public Dotacion(DotacionId entityId, Name name, Observaciones observaciones) {
         super(entityId);
-        appendChange(new dotacionCreada(name)).apply();
+        appendChange(new dotacionCreada(name, observaciones)).apply();
     }
 
     public static Dotacion from(DotacionId dotacionId, List<DomainEvent> domainEvents) {
@@ -45,6 +47,14 @@ public class Dotacion extends AggregateEvent<DotacionId>{
         MovilId movilId = new MovilId();
         appendChange(new movilCreado(movilId, maricula, tipo, marca,
                 implemento, modelo)).apply();
+    }
+
+    public void actualizarPolicia(DotacionId dotacionId, Documento documento, Nombre nombre, Grado grado,
+                                  Implemento implemento, Rol rol){
+        appendChange(new policiaActualizado(dotacionId, documento, nombre, grado, implemento, rol)).apply();
+    }
+    protected Optional<Policia> findClientById(PoliciaId policiaId) {
+        return this.policiaSet.stream().filter(policia -> policia.identity().equals(policiaId)).findFirst();
     }
 
 }//fin clase

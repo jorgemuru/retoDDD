@@ -1,4 +1,4 @@
-package co.com.sofka.DDDReto.Business.UseCases;
+package co.com.sofka.DDDReto.Domain.Dotacion.UseCases;
 import co.com.sofka.DDDReto.Domain.Dotacion.Dotacion;
 import co.com.sofka.business.generic.UseCase;
 import co.com.sofka.business.support.RequestCommand;
@@ -10,7 +10,7 @@ public class CrearDotacionUseCase extends UseCase<RequestCommand<crearDotacion>,
     public void executeUseCase(RequestCommand<crearDotacion> crearDotacionRequestCommand) {
         var command = crearDotacionRequestCommand.getCommand();
 
-            var dotacion = new Dotacion(command.getEntityId(), command.getName());
+            var dotacion = new Dotacion(command.getEntityId(), command.getName(), command.getObservaciones());
 
         emit().onResponse(new ResponseEvents(dotacion.getUncommittedChanges()));
     }

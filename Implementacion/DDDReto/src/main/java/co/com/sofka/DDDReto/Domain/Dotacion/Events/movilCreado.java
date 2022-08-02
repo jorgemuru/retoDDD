@@ -6,11 +6,11 @@ import java.util.UUID;
 
 public class movilCreado extends DomainEvent{
     private final MovilId movilId;
-    private Matricula maricula;
-    private Tipo tipo;
-    private Marca marca;
-    private Implemento implemento;
-    private Modelo modelo;
+    private final Matricula maricula;
+    private final Tipo tipo;
+    private final Marca marca;
+    private final Implemento implemento;
+    private final Modelo modelo;
 
     public movilCreado(MovilId movilId, Matricula maricula, Tipo tipo, Marca marca,
                        Implemento implemento, Modelo modelo) {
