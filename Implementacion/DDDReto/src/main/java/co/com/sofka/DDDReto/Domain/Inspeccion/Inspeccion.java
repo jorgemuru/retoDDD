@@ -1,9 +1,4 @@
 package co.com.sofka.DDDReto.Domain.Inspeccion;
-import co.com.sofka.DDDReto.Domain.Dotacion.Dotacion;
-import co.com.sofka.DDDReto.Domain.Dotacion.DotacionChange;
-import co.com.sofka.DDDReto.Domain.Dotacion.Events.dotacionCreada;
-import co.com.sofka.DDDReto.Domain.Dotacion.Events.movilCreado;
-import co.com.sofka.DDDReto.Domain.Dotacion.Values.DotacionId;
 import co.com.sofka.DDDReto.Domain.Inspeccion.Entities.*;
 import co.com.sofka.DDDReto.Domain.Inspeccion.Events.ElementoCreado;
 import co.com.sofka.DDDReto.Domain.Inspeccion.Events.InspeccionCreada;

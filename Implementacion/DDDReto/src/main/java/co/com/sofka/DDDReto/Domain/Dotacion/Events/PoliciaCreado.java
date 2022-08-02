@@ -3,7 +3,7 @@ package co.com.sofka.DDDReto.Domain.Dotacion.Events;
 import co.com.sofka.DDDReto.Domain.Dotacion.Values.*;
 import co.com.sofka.domain.generic.DomainEvent;
 
-public class policiaCreado extends DomainEvent{
+public class PoliciaCreado extends DomainEvent{
     private final PoliciaId policiaId;
     private final Documento documento;
     private final Nombre nombre;
@@ -11,7 +11,7 @@ public class policiaCreado extends DomainEvent{
     private final Implemento implemento;
     private final Rol rol;
 
-    public policiaCreado(PoliciaId policiaId, Documento documento, Nombre nombre,
+    public PoliciaCreado(PoliciaId policiaId, Documento documento, Nombre nombre,
                          Grado grado, Implemento implemento, Rol rol) {
         super("co.com.sofka.DDDReto.Domain.Dotacion.policiaCreado");
         this.policiaId = policiaId;

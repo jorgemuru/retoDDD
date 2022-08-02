@@ -3,7 +3,7 @@ package co.com.sofka.DDDReto.Domain.Dotacion.commands;
 import co.com.sofka.DDDReto.Domain.Dotacion.Values.*;
 import co.com.sofka.domain.generic.Command;
 
-public class crearPolicia extends Command {
+public class CrearPolicia extends Command {
     private final DotacionId dotacionId;
     private final Documento documento;
     private final Nombre nombre;
@@ -12,7 +12,7 @@ public class crearPolicia extends Command {
     private final Rol rol;
     private final Name name;
 
-    public crearPolicia(DotacionId dotacionId, Documento documento, Nombre nombre,
+    public CrearPolicia(DotacionId dotacionId, Documento documento, Nombre nombre,
                         Grado grado, Implemento implemento, Rol rol, Name name) {
         this.dotacionId = dotacionId;
         this.documento = documento;

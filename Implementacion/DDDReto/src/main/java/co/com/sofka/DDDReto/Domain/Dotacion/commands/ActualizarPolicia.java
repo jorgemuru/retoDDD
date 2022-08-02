@@ -1,11 +1,8 @@
-package co.com.sofka.DDDReto.Domain.Dotacion.Events;
-
-import co.com.sofka.domain.generic.DomainEvent;
+package co.com.sofka.DDDReto.Domain.Dotacion.commands;
 import co.com.sofka.DDDReto.Domain.Dotacion.Values.*;
+import co.com.sofka.domain.generic.Command;
 
-import java.util.UUID;
-
-public class policiaActualizado extends DomainEvent {
+public class ActualizarPolicia extends Command {
     private final DotacionId dotacionId;
     private final Documento documento;
     private final Nombre nombre;
@@ -13,9 +10,8 @@ public class policiaActualizado extends DomainEvent {
     private final Implemento implemento;
     private final Rol rol;
 
-    public policiaActualizado(DotacionId dotacionId, Documento documento, Nombre nombre, Grado grado,
-                              Implemento implemento, Rol rol) {
-        super("co.com.sofka.DDDReto.Domain.Dotacion.policiaActualizado");
+    public ActualizarPolicia(DotacionId dotacionId, Documento documento, Nombre nombre,
+                             Grado grado, Implemento implemento, Rol rol) {
         this.dotacionId = dotacionId;
         this.documento = documento;
         this.nombre = nombre;
@@ -47,5 +43,4 @@ public class policiaActualizado extends DomainEvent {
     public Rol getRol() {
         return rol;
     }
-
 }

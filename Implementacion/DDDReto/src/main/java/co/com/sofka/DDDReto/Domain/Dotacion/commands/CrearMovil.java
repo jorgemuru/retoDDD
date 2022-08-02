@@ -2,7 +2,7 @@ package co.com.sofka.DDDReto.Domain.Dotacion.commands;
 import co.com.sofka.DDDReto.Domain.Dotacion.Values.*;
 import co.com.sofka.domain.generic.Command;
 
-public class crearMovil extends Command{
+public class CrearMovil extends Command{
     private final DotacionId dotacionId;
     private final Matricula maricula;
     private final Tipo tipo;
@@ -11,7 +11,7 @@ public class crearMovil extends Command{
     private final Modelo modelo;
     private final Name name;
 
-    public crearMovil(DotacionId dotacionId, Matricula maricula, Tipo tipo,
+    public CrearMovil(DotacionId dotacionId, Matricula maricula, Tipo tipo,
                       Marca marca, Implemento implemento, Modelo modelo, Name name) {
         this.dotacionId = dotacionId;
         this.maricula = maricula;

@@ -1,8 +1,8 @@
 package co.com.sofka.DDDReto.Domain.Dotacion;
-import co.com.sofka.DDDReto.Domain.Dotacion.Events.dotacionCreada;
-import co.com.sofka.DDDReto.Domain.Dotacion.Events.movilCreado;
-import co.com.sofka.DDDReto.Domain.Dotacion.Events.policiaActualizado;
-import co.com.sofka.DDDReto.Domain.Dotacion.Events.policiaCreado;
+import co.com.sofka.DDDReto.Domain.Dotacion.Events.DotacionCreada;
+import co.com.sofka.DDDReto.Domain.Dotacion.Events.MovilCreado;
+import co.com.sofka.DDDReto.Domain.Dotacion.Events.PoliciaActualizado;
+import co.com.sofka.DDDReto.Domain.Dotacion.Events.PoliciaCreado;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.DDDReto.Domain.Dotacion.Values.*;
 import co.com.sofka.DDDReto.Domain.Dotacion.Entities.*;
@@ -27,7 +27,7 @@ public class Dotacion extends AggregateEvent<DotacionId>{
     }
     public Dotacion(DotacionId entityId, Name name, Observaciones observaciones) {
         super(entityId);
-        appendChange(new dotacionCreada(name, observaciones)).apply();
+        appendChange(new DotacionCreada(name, observaciones)).apply();
     }
 
     public static Dotacion from(DotacionId dotacionId, List<DomainEvent> domainEvents) {
@@ -40,18 +40,18 @@ public class Dotacion extends AggregateEvent<DotacionId>{
     public void crearPolicia(Name name, Documento documento, Nombre nombre, Grado grado,
                              Implemento implemento, Rol rol) {
         PoliciaId policiaId = new PoliciaId();
-        appendChange(new policiaCreado(policiaId, documento, nombre, grado, implemento, rol)).apply();
+        appendChange(new PoliciaCreado(policiaId, documento, nombre, grado, implemento, rol)).apply();
     }
     public void crearMovil(Name name, Matricula maricula, Tipo tipo, Marca marca,
                            Implemento implemento, Modelo modelo) {
         MovilId movilId = new MovilId();
-        appendChange(new movilCreado(movilId, maricula, tipo, marca,
+        appendChange(new MovilCreado(movilId, maricula, tipo, marca,
                 implemento, modelo)).apply();
     }
 
     public void actualizarPolicia(DotacionId dotacionId, Documento documento, Nombre nombre, Grado grado,
                                   Implemento implemento, Rol rol){
-        appendChange(new policiaActualizado(dotacionId, documento, nombre, grado, implemento, rol)).apply();
+        appendChange(new PoliciaActualizado(dotacionId, documento, nombre, grado, implemento, rol)).apply();
     }
     protected Optional<Policia> findClientById(PoliciaId policiaId) {
         return this.policiaSet.stream().filter(policia -> policia.identity().equals(policiaId)).findFirst();

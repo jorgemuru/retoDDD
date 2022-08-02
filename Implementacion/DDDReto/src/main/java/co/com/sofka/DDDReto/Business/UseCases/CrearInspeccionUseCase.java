@@ -1,4 +1,4 @@
-package co.com.sofka.DDDReto.Domain.Inspeccion.UseCases;
+package co.com.sofka.DDDReto.Business.UseCases;
 
 import co.com.sofka.DDDReto.Domain.Inspeccion.Inspeccion;
 import co.com.sofka.DDDReto.Domain.Inspeccion.commands.CrearInspeccion;

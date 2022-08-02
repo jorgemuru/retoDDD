@@ -1,4 +1,4 @@
-package co.com.sofka.DDDReto.Domain.Operativo.UseCases;
+package co.com.sofka.DDDReto.Business.UseCases;
 
 import co.com.sofka.DDDReto.Domain.Operativo.Operativo;
 import co.com.sofka.DDDReto.Domain.Operativo.commands.CrearInforme;

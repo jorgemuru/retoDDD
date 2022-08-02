@@ -2,9 +2,7 @@ package co.com.sofka.DDDReto.Domain.Dotacion.Events;
 import co.com.sofka.DDDReto.Domain.Dotacion.Values.*;
 import co.com.sofka.domain.generic.DomainEvent;
 
-import java.util.UUID;
-
-public class movilCreado extends DomainEvent{
+public class MovilCreado extends DomainEvent{
     private final MovilId movilId;
     private final Matricula maricula;
     private final Tipo tipo;
@@ -12,7 +10,7 @@ public class movilCreado extends DomainEvent{
     private final Implemento implemento;
     private final Modelo modelo;
 
-    public movilCreado(MovilId movilId, Matricula maricula, Tipo tipo, Marca marca,
+    public MovilCreado(MovilId movilId, Matricula maricula, Tipo tipo, Marca marca,
                        Implemento implemento, Modelo modelo) {
         super("co.com.sofka.DDDReto.Domain.Dotacion.movilCreado");
         this.movilId = movilId;

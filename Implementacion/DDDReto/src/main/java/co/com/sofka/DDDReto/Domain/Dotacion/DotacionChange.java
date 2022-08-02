@@ -8,18 +8,18 @@ import java.util.HashSet;
 
 public class DotacionChange extends EventChange {
     DotacionChange(Dotacion dotacion) {
-        apply((dotacionCreada event) -> {
+        apply((DotacionCreada event) -> {
             dotacion.name = event.getName();
             dotacion.policiaSet = new HashSet<>();
             dotacion.movilSet = new HashSet<>();
         });
 
-        apply((policiaCreado event) -> {
+        apply((PoliciaCreado event) -> {
             Policia policia = new Policia(event.getPoliciaId(), event.getDocumento(), event.getNombre(),
                     event.getGrado(), event.getImplemento(), event.getRol());
             dotacion.policiaSet.add(policia);
         });
-        apply((movilCreado event) -> {
+        apply((MovilCreado event) -> {
             Movil movil = new Movil(event.getMovilId(), event.getMaricula(), event.getTipo(),
                     event.getMarca(), event.getImplemento(), event.getModelo());
             dotacion.movilSet.add(movil);
